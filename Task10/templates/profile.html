@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block title %}Profile - My Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="profile-card">
+
+    <img
+        class="profile-image"
+        src="{{ url_for('static', filename='images/profile.jpg') }}"
+        alt="Profile picture"
+    >
+
+    <h1>{{ profile.name }}</h1>
+    <h3>{{ profile.role }}</h3>
+
+    <p>{{ profile.bio }}</p>
+
+    <div class="profile-info">
+        <p><strong>Email:</strong> {{ profile.email }}</p>
+        <p><strong>Location:</strong> {{ profile.location }}</p>
+    </div>
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills-list">
+        {% for skill in profile.skills %}
+        <span class="skill">{{ skill }}</span>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

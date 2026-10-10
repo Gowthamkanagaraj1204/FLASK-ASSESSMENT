@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block title %}Books - My Library{% endblock %}
+
+{% block content %}
+
+<h1 class="section-title">Available Books</h1>
+
+<div class="book-grid">
+    {% for book in books %}
+    <div class="book-card">
+
+        <span class="book-id">Book ID: {{ book.id }}</span>
+
+        <h3>{{ book.title }}</h3>
+
+        <p><strong>Author:</strong> {{ book.author }}</p>
+
+        <p>
+            <strong>Publication Year:</strong>
+            {{ book.year if book.year else "Unknown" }}
+        </p>
+
+        <a class="btn"
+           href="{{ url_for('book_details', book_id=book.id) }}">
+            View Details
+        </a>
+
+    </div>
+    {% else %}
+    <p>No books are currently available.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

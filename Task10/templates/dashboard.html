@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard - My Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="welcome">
+    <h1>Welcome, {{ profile.name }}!</h1>
+    <p>Here is an overview of your profile and projects.</p>
+</section>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>Total Projects</h3>
+        <p class="stat-number">{{ projects|length }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Skills</h3>
+        <p class="stat-number">{{ profile.skills|length }}</p>
+    </div>
+</div>
+
+<section class="profile-summary">
+    <h2>Profile Summary</h2>
+    <p><strong>Name:</strong> {{ profile.name }}</p>
+    <p><strong>Role:</strong> {{ profile.role }}</p>
+    <p><strong>Location:</strong> {{ profile.location }}</p>
+
+    <a class="btn" href="{{ url_for('user_profile') }}">
+        View Profile
+    </a>
+</section>
+
+<section>
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="project-grid">
+        {% for project in projects[:3] %}
+        <div class="project-card">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.category }}</p>
+            <span class="status">{{ project.status }}</span>
+
+            <a class="btn"
+               href="{{ url_for('project_details',
+                                project_id=project.id) }}">
+                View Project
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a class="text-link" href="{{ url_for('project_list') }}">
+        View All Projects →
+    </a>
+</section>
+
+{% endblock %}

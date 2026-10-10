@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home - LearnHub{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Welcome to LearnHub</h1>
+
+    <p>
+        Learn programming, web development, and databases
+        with our online courses.
+    </p>
+
+    <a class="btn" href="{{ url_for('course_list') }}">
+        Explore Courses
+    </a>
+</section>
+
+<section>
+    <h2 class="section-title">Featured Courses</h2>
+
+    <div class="course-grid">
+        {% for course in courses %}
+        <div class="course-card">
+
+            <img
+                src="{{ url_for('static', filename='images/' + course.image) }}"
+                alt="{{ course.name }}">
+
+            <div class="course-info">
+                <span class="category">{{ course.category }}</span>
+
+                <h3>{{ course.name }}</h3>
+
+                <p>{{ course.duration }}</p>
+
+                <p class="price">
+                    ₹{{ "{:,.2f}".format(course.price) }}
+                </p>
+
+                <a class="btn"
+                   href="{{ url_for('course_details',
+                                    course_id=course.id) }}">
+                    View Course
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

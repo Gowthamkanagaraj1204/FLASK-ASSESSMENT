@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ destination.name }} - Travel Explorer{% endblock %}
+
+{% block content %}
+
+<div class="details-card">
+
+    <img
+        class="details-image"
+        src="{{ url_for('static', filename=destination.image) }}"
+        alt="{{ destination.name }}"
+    >
+
+    <div class="details-content">
+        <h1>{{ destination.name }}</h1>
+
+        <h3>Location: {{ destination.location }}</h3>
+
+        <p>{{ destination.description }}</p>
+
+        <a class="btn" href="{{ url_for('home') }}">
+            Back to Destinations
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

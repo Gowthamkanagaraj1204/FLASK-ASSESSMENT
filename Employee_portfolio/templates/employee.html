@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ employee.name }} - Profile{% endblock %}
+
+{% block content %}
+<section class="profile-card">
+    <img
+        class="profile-image"
+        src="{{ url_for('static', filename='images/' + employee.image) }}"
+        alt="{{ employee.name }}">
+
+    <h1>{{ employee.name }}</h1>
+    <h3>{{ employee.role }}</h3>
+
+    <p><strong>Username:</strong> {{ employee.username }}</p>
+    <p><strong>Email:</strong> {{ employee.email }}</p>
+    <p><strong>Location:</strong> {{ employee.location }}</p>
+
+    <hr>
+
+    <h2>About Me</h2>
+    <p>{{ employee.about }}</p>
+
+    <h2>My Skills</h2>
+    <div class="skills-list">
+        {% for skill in employee.skills %}
+        <span>{{ skill }}</span>
+        {% endfor %}
+    </div>
+
+    <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home - Travel Explorer{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Explore Beautiful Destinations</h1>
+    <p>Discover amazing places and plan your next adventure.</p>
+</section>
+
+<h2 class="section-title">Popular Tourist Destinations</h2>
+
+<div class="destination-grid">
+
+    {% for destination in destinations %}
+    <div class="destination-card">
+
+        <img
+            src="{{ url_for('static', filename=destination.image) }}"
+            alt="{{ destination.name }}"
+        >
+
+        <div class="card-content">
+            <h3>{{ destination.name }}</h3>
+
+            <p class="location">
+                📍 {{ destination.location }}
+            </p>
+
+            <p>{{ destination.description }}</p>
+
+            <a
+                class="btn"
+                href="{{ url_for('destination_details',
+                                 slug=destination.slug) }}"
+            >
+                Explore Destination
+            </a>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

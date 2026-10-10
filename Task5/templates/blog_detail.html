@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - MyBlog{% endblock %}
+
+{% block content %}
+
+<article class="detail-card">
+    <h1>{{ post.title }}</h1>
+
+    <p class="post-meta">
+        Written by {{ post.author }} | {{ post.date }}
+    </p>
+
+    <p class="summary">{{ post.summary }}</p>
+
+    <hr>
+
+    <div class="post-body">
+        {{ post.content }}
+    </div>
+
+    <a href="{{ url_for('blog_list') }}" class="btn">
+        ← Back to All Blogs
+    </a>
+</article>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 8%;
+    background: #17365d;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    min-height: 70vh;
+    margin: 35px auto;
+}
+
+.hero {
+    text-align: center;
+    background: #dcecff;
+    padding: 35px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.student-card,
+.details-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000012;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #1769aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background: #104d80;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #17365d;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+    }
+
+    .navbar {
+        padding: 16px 5%;
+    }
+}

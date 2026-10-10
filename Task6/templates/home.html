@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home - Tasty Bites{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Welcome to Tasty Bites</h1>
+    <p>Delicious food made fresh, served with love.</p>
+
+    <a href="{{ url_for('menu') }}" class="btn">
+        Explore Our Menu
+    </a>
+</section>
+
+<section>
+    <h2 class="section-title">Our Popular Dishes</h2>
+
+    <div class="food-grid">
+        {% for food in foods %}
+        <div class="food-card">
+            <img
+                src="{{ url_for('static', filename='images/' + food.image) }}"
+                alt="{{ food.name }}">
+
+            <div class="food-info">
+                <h3>{{ food.name }}</h3>
+                <p class="price">₹{{ food.price }}</p>
+
+                <a class="btn"
+                   href="{{ url_for('food_details',
+                                    food_id=food.id) }}">
+                    View Details
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

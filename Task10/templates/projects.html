@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block title %}Projects - My Dashboard{% endblock %}
+
+{% block content %}
+
+<h1 class="section-title">My Projects</h1>
+
+<div class="project-grid">
+
+    {% for project in projects %}
+    <div class="project-card">
+
+        <span class="project-id">Project ID: {{ project.id }}</span>
+
+        <h3>{{ project.name }}</h3>
+
+        <p><strong>Category:</strong> {{ project.category }}</p>
+        <p><strong>Status:</strong> {{ project.status }}</p>
+        <p>{{ project.description }}</p>
+
+        <a class="btn"
+           href="{{ url_for('project_details',
+                            project_id=project.id) }}">
+            View Details
+        </a>
+
+    </div>
+    {% else %}
+    <p>No projects are available.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

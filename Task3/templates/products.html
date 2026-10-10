@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+{% block title %}Products - ShopZone{% endblock %}
+
+{% block content %}
+
+<section class="heading">
+    <h1>Our Products</h1>
+    <p>Explore our latest products and prices.</p>
+</section>
+
+<div class="product-grid">
+
+    {% for product in products %}
+    <div class="product-card">
+
+        <img
+            src="{{ url_for('static', filename='images/' + product.image) }}"
+            alt="{{ product.name }}">
+
+        <div class="product-info">
+            <h2>{{ product.name }}</h2>
+
+            <p class="price">
+                ₹{{ "{:,.2f}".format(product.price) }}
+            </p>
+
+            <a class="btn"
+               href="{{ url_for('product_details',
+                                product_id=product.id) }}">
+                View Details
+            </a>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

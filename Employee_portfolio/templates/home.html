@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home - Employee Portfolio{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to Our Employee Portfolio</h1>
+    <p>Discover our employees, their skills, and their experience.</p>
+</section>
+
+<h2 class="section-title">Our Employees</h2>
+
+<div class="employee-grid">
+    {% for employee in employees %}
+    <div class="employee-card">
+        <img
+            src="{{ url_for('static', filename='images/' + employee.image) }}"
+            alt="{{ employee.name }}">
+
+        <h3>{{ employee.name }}</h3>
+        <p>{{ employee.role }}</p>
+        <p>{{ employee.location }}</p>
+
+        <a class="btn"
+           href="{{ url_for('employee_profile',
+                            username=employee.username) }}">
+            View Profile
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

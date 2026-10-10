@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Job Portal{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"
+            defer></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">
+                CareerConnect
+            </a>
+
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('job_listings') }}">Job Listings</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CareerConnect. Find your next opportunity.</p>
+    </footer>
+
+</body>
+</html>

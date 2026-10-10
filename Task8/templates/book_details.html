@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ book.title }} - My Library{% endblock %}
+
+{% block content %}
+
+<div class="details-card">
+
+    <span class="book-id">Book ID: {{ book.id }}</span>
+
+    <h1>{{ book.title }}</h1>
+
+    <p>
+        <strong>Author:</strong>
+        {{ book.author }}
+    </p>
+
+    <p>
+        <strong>Publication Year:</strong>
+        {{ book.year if book.year else "Unknown" }}
+    </p>
+
+    <h3>About This Book</h3>
+
+    <p>{{ book.description }}</p>
+
+    <a class="btn" href="{{ url_for('book_list') }}">
+        Back to Books
+    </a>
+
+</div>
+
+{% endblock %}

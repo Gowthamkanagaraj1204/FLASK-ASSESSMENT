@@ -1,0 +1,183 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+    line-height: 1.6;
+}
+
+.navbar {
+    background: #17365d;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a:hover {
+    color: #8ed8ff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto;
+    min-height: 70vh;
+}
+
+.hero {
+    background: linear-gradient(135deg, #dceeff, #edf7ff);
+    text-align: center;
+    padding: 55px 20px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    color: #17365d;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    color: #17365d;
+    margin-bottom: 22px;
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.job-card,
+.details-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000012;
+}
+
+.job-card h3 {
+    color: #17365d;
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+.job-card p {
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.job-type {
+    display: inline-block;
+    background: #e1f5e8;
+    color: #176b3a;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.btn {
+    display: inline-block;
+    background: #1769aa;
+    color: white;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #104b7b;
+}
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 25px;
+    border: 1px solid #ccd5df;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.details-card {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.details-card h1 {
+    color: #17365d;
+    margin: 15px 0;
+}
+
+.details-card h2 {
+    color: #17365d;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.details-card p {
+    margin: 10px 0;
+}
+
+.skills-list {
+    padding-left: 25px;
+}
+
+.skills-list li {
+    margin: 5px 0;
+}
+
+.no-results {
+    margin-top: 20px;
+    color: #a12626;
+}
+
+footer {
+    background: #17365d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 650px) {
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}

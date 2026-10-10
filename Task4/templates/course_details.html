@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ course.name }} - LearnHub{% endblock %}
+
+{% block content %}
+
+<section class="details-card">
+
+    <img
+        class="details-image"
+        src="{{ url_for('static', filename='images/' + course.image) }}"
+        alt="{{ course.name }}">
+
+    <div class="details-info">
+        <span class="category">{{ course.category }}</span>
+
+        <h1>{{ course.name }}</h1>
+
+        <p>{{ course.description }}</p>
+
+        <p><strong>Course ID:</strong> {{ course.id }}</p>
+
+        <p><strong>Duration:</strong> {{ course.duration }}</p>
+
+        <p class="price">
+            Course Fee: ₹{{ "{:,.2f}".format(course.price) }}
+        </p>
+
+        <h2>What You Will Learn</h2>
+
+        <ul class="topic-list">
+            {% for topic in course.topics %}
+            <li>{{ topic }}</li>
+            {% endfor %}
+        </ul>
+
+        <a class="btn" href="{{ url_for('course_list') }}">
+            Back to Courses
+        </a>
+    </div>
+
+</section>
+
+{% endblock %}

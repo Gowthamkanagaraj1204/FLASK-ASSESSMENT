@@ -1,0 +1,152 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    background: #12372a;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .logo {
+    font-size: 24px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    min-height: 70vh;
+}
+
+.hero {
+    background: #dff5e5;
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    color: #12372a;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: #12372a;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px #00000015;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 23px;
+    color: #12372a;
+    margin-bottom: 5px;
+}
+
+.location {
+    color: #547565;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #176b45;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #0d4d30;
+}
+
+.details-card {
+    max-width: 850px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px #00000015;
+}
+
+.details-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.details-content {
+    padding: 25px;
+}
+
+.details-content h1 {
+    color: #12372a;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #12372a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 650px) {
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .details-image {
+        height: 250px;
+    }
+}

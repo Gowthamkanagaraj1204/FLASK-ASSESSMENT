@@ -1,0 +1,33 @@
+ {% extends "base.html" %}
+
+{% block title %}Student Details{% endblock %}
+
+{% block content %}
+
+<div class="details-card">
+
+    <h1>Student Details</h1>
+
+    <p>
+        <strong>Student ID:</strong> {{ student_id }}
+    </p>
+
+    <p>
+        <strong>Name:</strong> {{ student.name }}
+    </p>
+
+    <p>
+        <strong>Age:</strong> {{ student.age }}
+    </p>
+
+    <p>
+        <strong>Course:</strong> {{ student.course }}
+    </p>
+
+    <a href="{{ url_for('home') }}" class="btn">
+        Back to Home
+    </a>
+
+</div>
+
+{% endblock %}

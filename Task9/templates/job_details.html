@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ job.title }} - CareerConnect{% endblock %}
+
+{% block content %}
+
+<div class="details-card">
+
+    <span class="job-type">{{ job.type }}</span>
+
+    <h1>{{ job.title }}</h1>
+
+    <p><strong>Company:</strong> {{ job.company }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Salary:</strong> {{ job.salary }}</p>
+
+    <h2>Job Description</h2>
+    <p>{{ job.description }}</p>
+
+    <h2>Required Skills</h2>
+    <ul class="skills-list">
+        {% for skill in job.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <a class="btn" href="{{ url_for('job_listings') }}">
+        Back to Job Listings
+    </a>
+
+</div>
+
+{% endblock %}
